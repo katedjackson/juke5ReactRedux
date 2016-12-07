@@ -4,20 +4,18 @@ import {Link} from 'react-router';
 
 export default function (props) {
 
-  const getGenres = () => {
-    const genres = Object.keys(props.stations);
-    return genres;
-  }
+  const genres = Object.keys(props.stations);
+
 
   return (
     <div>
       <h3>Stations</h3>
       <div className="list-group">
       {
-        getGenres().map(station => {
+        genres.map(genre => {
           return (
-            <div className="list-group-item" key={station}>
-              <Link to={'fill/me/in/later'}>{station}</Link>
+            <div className="list-group-item" key={genre}>
+              <Link to={`/stations/${genre}`}>{genre}</Link>
             </div>
           );
         })

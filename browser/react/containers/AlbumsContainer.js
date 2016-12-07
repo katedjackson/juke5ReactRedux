@@ -20,7 +20,9 @@ export default class extends Component {
   }
 
   render() {
+    console.log(this.props)
     return <Albums albums={this.state.list}/>;
+
   }
 
 }
