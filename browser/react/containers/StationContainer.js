@@ -24,3 +24,4 @@ const mapDispatchToProps = function (dispatch, ownProps) {
 const StationContainer = connect(mapStateToProps, mapDispatchToProps)(Station);
 
 export default StationContainer;
+

@@ -54,7 +54,9 @@ const onPlaylistEnter = function (nextRouterState) {
   store.dispatch(getPlaylistById(playlistId));
 };
 const onStationsEnter = function (nextRouterState) {
-  store.dispatch(loadAllSongs());
+  if (store.getState().songs.length === 0) {
+    store.dispatch(loadAllSongs());
+  }
 };
 
 ReactDOM.render(
