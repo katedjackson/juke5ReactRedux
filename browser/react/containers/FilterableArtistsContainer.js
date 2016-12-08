@@ -1,3 +1,4 @@
+import {connect} from 'react-redux';
 import React from 'react';
 import FilterInput from '../components/FilterInput';
 import Artists from '../components/Artists';

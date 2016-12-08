@@ -1,21 +1,24 @@
-import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import store from '../store';
 import Station from '../components/Station';
-import {connect} from 'react-redux'
+import {convertSong} from '../utils';
+import {toggleSong} from '../action-creators/player';
 
-const findSongsForStation = function(genreName) {
-
-	var songsArray = [];
-	for (var genre in stations) {
-		if (stations[genre] === genreName) songsArray = stations[genre]
-	}
-	return songsArray;
-}	
-
-const mapStateToProps = function(state, ownProps){
+const mapStateToProps = function (state, ownProps) {
 	return {
-		genreName : ownProps.params.genreName
-	}
+		genreName : ownProps.params.genreName,
+    songs: state.songs.filter(song => song.genre === ownProps.params.genreName).map(convertSong),
+    currentSong: state.player.currentSong,
+    isPlaying: state.player.currentSong
+	};
+}
+
+const mapDispatchToProps = function (dispatch, ownProps) {
+  return {
+    toggleOne: function (song, list) {
+      dispatch(toggleSong(song, list));
+    }
+  };
 }
 
 const StationContainer = connect(mapStateToProps, mapDispatchToProps)(Station);

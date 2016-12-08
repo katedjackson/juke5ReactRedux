@@ -11,8 +11,8 @@ export default function (props) {
   return (
     <div className="album">
       <div>
-        <h3>{ album.name }</h3>
-        <img src={ album.imageUrl } className="img-thumbnail"/>
+        <h3>{album.name}</h3>
+        <img src={album.imageUrl} className="img-thumbnail"/>
       </div>
       <Songs
         songs={album.songs}

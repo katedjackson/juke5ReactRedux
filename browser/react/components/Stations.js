@@ -1,11 +1,9 @@
 import React from 'react';
-import RECEIVE_STATIONS from '../constants';
 import {Link} from 'react-router';
 
 export default function (props) {
 
   const genres = Object.keys(props.stations);
-
 
   return (
     <div>

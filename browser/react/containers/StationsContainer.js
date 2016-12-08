@@ -1,4 +1,3 @@
-import React, {Component} from 'react';
 import store from '../store';
 import Stations from '../components/Stations';
 import {connect} from 'react-redux';
@@ -20,7 +19,9 @@ const mapStateToProps = function (state) {
   };
 }
 
-const mapDispatchToProps = (dispatch) => {};
+const mapDispatchToProps = function (dispatch, ownProps) {
+  return {};
+}
 
 const StationsContainer = connect(mapStateToProps, mapDispatchToProps)(Stations);
 

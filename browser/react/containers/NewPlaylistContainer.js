@@ -1,3 +1,4 @@
+import {connect} from 'react-redux';
 import React from 'react';
 import NewPlaylist from '../components/NewPlaylist';
 import store from '../store';

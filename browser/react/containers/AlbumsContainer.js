@@ -1,3 +1,4 @@
+import {connect} from 'react-redux';
 import React, {Component} from 'react';
 import store from '../store';
 import Albums from '../components/Albums';
@@ -20,7 +21,6 @@ export default class extends Component {
   }
 
   render() {
-    console.log(this.props)
     return <Albums albums={this.state.list}/>;
 
   }
